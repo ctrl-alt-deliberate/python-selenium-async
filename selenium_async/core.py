@@ -102,7 +102,7 @@ def launch_sync(options: Optional[Options] = None) -> WebDriver:
     if options.browser == "firefox":
         firefox_options = FirefoxOptions()
         if options.headless:
-            firefox_options.headless = True
+            firefox_options.add_argument("--headless")
 
         return Firefox(options=firefox_options)
     if options.browser == "chrome":
